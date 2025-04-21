@@ -7,7 +7,6 @@
 
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="style.scss">
     <link rel="stylesheet" href="style.css">
 
 
@@ -34,8 +33,8 @@
 
     <div class="icons">
         <div class="fas fa-search" id="search-btn"></div>
-        <div class="fas fa-shopping-cart" id="cart-btn">
-            <span>0</span>
+        <button type="button" id="cart-btn"><i class="fa-solid fa-cart-shopping icon-cart"></i></button> 
+            <span id="cartCount">0</span>
         </div>
         <div class="fas fa-bars" id="menu-btn"></div>
     </div>
@@ -48,64 +47,48 @@
 
 
     <div class="cart-items-container">
+        <div id="cart-items">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="contentProducts">
+                    <!---<tr>
+                        <td><img src="/assets/img/products/product-01.jpg" alt=""></td>
+                        <td>
+                            Lorem ipsum dolor sit.
+                        </td>
+                        <td>$15</td>
+                        <td>
+                            <input type="number" min="1">
+                        </td>
+                        <td>
+                            <button type="button">X</button>
+                        </td>
+                    </tr> -->
+                </tbody>
+    
+                <tfoot>
+                    <tr>
+                        <td colspan="5" class="total">
+                            <h4 class="heading-total">Total: <span id="total"></span></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <button type="button" id="emptyCart">Empty Cart</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
 
-        <div class="cart-item">
-            <span class="fas fa-times"></span>
-            <img src="card2.png" alt="">
-            <div class="content">
-                <h3>cart item 01</h3>
-                <div class="price">$15.99/-</div>
-            </div>
-            <div class="quantity">
-                <span class="minus"> < </span>
-                <span>1</span>
-                <span class="plus"> > </span>
-            </div>
-        </div>
-
-        <div class="cart-item">
-            <span class="fas fa-times"></span>
-            <img src="card1.png" alt="">
-            <div class="content">
-                <h3>cart item 02</h3>
-                <div class="price">$15.99/-</div>
-            </div>
-            <div class="quantity">
-                <span class="minus"><</span>
-                <span>1</span>
-                <span class="plus">></span>
-            </div>
-        </div>
-
-        <div class="cart-item">
-            <span class="fas fa-times"></span>
-            <img src="card3.png" alt="">
-            <div class="content">
-                <h3>cart item 03</h3>
-                <div class="price">$15.99/-</div>
-            </div>
-            <div class="quantity">
-                <span class="minus"><</span>
-                <span>1</span>
-                <span class="plus">></span>
-            </div>
-        </div>
-
-        <div class="cart-item">
-            <span class="fas fa-times"></span>
-            <img src="card5.png" alt="">
-            <div class="content">
-                <h3>cart item </h3>
-                <div class="price">$15.99/-</div>
-            </div>
-            <div class="quantity">
-                <span class="minus"><</span>
-                <span>1</span>
-                <span class="plus">></span>
-            </div>
-        </div>
-        <a href="#" class="btn">Paga Ahora</a>
-    </div>
+       
 
 </header>
 
@@ -230,146 +213,160 @@
 
 
 
-<section class="products" id="products">
+<section class="products" id="listProducts">
 
-    <h1 class="heading"> our <span>products</span> </h1>
+<div id="contentProducts">
 
-    <div class="box-container">
 
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-            </div>
-            <div class="image">
-                <img src="card1.png" alt="">
-            </div>
-            <div class="content">
-                <h3>fresh coffe</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+    
+</div>
+
+        <h1 class="heading"> our <span>products</span> </h1>
+
+        <div class="box-container">
+    
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
                 </div>
-                <div class="price">$15.99 <span>$20.99</span></div>
+                <div class="image">
+                    <img src="card1.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>fresh coffe</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price" >$15.99 <span>$20.99</span></div>
+                    <button class="btn" type="button" data-id="1">Add to Cart</button>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="card2.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>fresh cami</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price" >$15.99 <span>$20.99</span></div>
+                    <button class="btn" type="button" data-id="2">Add to Cart</button>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="card3.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>fresh coffe</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price" >$15.99 <span>$20.99</span></div>
+                    <button class="btn" type="button" data-id="3">Add to Cart</button>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="card4.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>fresh coffe</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price" >$15.99 <span>$20.99</span></div>
+                    <button class="btn" type="button" data-id="4">Add to Cart</button>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="card5.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>fresh coffe</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price" >$15.99 <span>$20.99</span></div>
+                    <button class="btn" type="button" data-id="5">Add to Cart</button>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="card6.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>fresh coffe</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price" >$15.99 <span>$20.99</span></div>
+                    <button class="btn" type="button" data-id="6">Add to Cart</button>
+                </div>
             </div>
         </div>
+    
+    </section>
 
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-            </div>
-            <div class="image">
-                <img src="card2.png" alt="">
-            </div>
-            <div class="content">
-                <h3>fresh coffe</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <div class="price">$15.99 <span>$20.99</span></div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-            </div>
-            <div class="image">
-                <img src="card3.png" alt="">
-            </div>
-            <div class="content">
-                <h3>fresh coffe</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <div class="price">$15.99 <span>$20.99</span></div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-            </div>
-            <div class="image">
-                <img src="card4.png" alt="">
-            </div>
-            <div class="content">
-                <h3>fresh coffe</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <div class="price">$15.99 <span>$20.99</span></div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-            </div>
-            <div class="image">
-                <img src="card5.png" alt="">
-            </div>
-            <div class="content">
-                <h3>fresh coffe</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <div class="price">$15.99 <span>$20.99</span></div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-            </div>
-            <div class="image">
-                <img src="card6.png" alt="">
-            </div>
-            <div class="content">
-                <h3>fresh coffe</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <div class="price">$15.99 <span>$20.99</span></div>
-            </div>
-        </div>
-    </div>
-
-</section>
+    
 
 
 
@@ -435,7 +432,7 @@
 
 <section class="contact" id="contact">
 
-    <h1-heading> <span>contact</span> us </h1-heading>
+    <h1 class="heading"> <span>contact</span> us </h1>
 
     <div class="row">
 
@@ -544,7 +541,7 @@
 
 
 <script src="script.js"></script>
-    
+
 
 </body>
 </html>

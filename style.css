@@ -85,23 +85,25 @@ section{
     z-index: 1000;
 }
 
-.header .fa-shopping-cart{
+.header .fa-cart-shopping{
     position: relative;
 }
 
-.header .fa-shopping-cart span{
+.header .fa-cart-shopping span{
     display: flex;
     width: 25px;
     height: 25px;
     background-color: rgb(122, 122, 122);
     justify-content: center;
     align-items: center;
-    color: white;
+    color: black;
     border-radius: 50%;
     position: absolute;
     top: 50%;
     right: -20%;
 }
+
+
 
 .header .logo img{
     height: 6rem;
@@ -133,6 +135,122 @@ section{
 #menu-btn{
     display: none;
 
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+        th {
+            padding: 1rem;
+            color: #f7f8f9;
+        }
+    }
+}
+
+tbody {
+    tr {
+        padding: 2rem 0;
+    }
+    td {
+        color: #f7f8f9;
+        padding: 1rem;
+        img {
+            width: 10rem;
+        }
+
+        p {
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
+
+        input {
+            width: 6rem;
+            background-color: transparent;
+            border: 1px solid #f7f8f9;
+            padding: .7rem;
+            color: #f7f8f9;
+            border-radius: .5rem;
+            &:focus,
+            &:active {
+                outline: none;
+            }
+        }
+
+        button {
+            border: none;
+            width: 3rem;
+            height: 3rem;
+            background-color: #dc2626;
+            color: #f7f8f9;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    }
+}
+
+tfoot {
+    .total {
+        text-align: right;
+        padding-bottom: 2rem;
+
+        .heading-total {
+            color: white;
+            span {
+                margin-left: .5rem;
+            }
+        }
+    }
+
+    td {
+        button {
+            width: 100%;
+            background-color: rgb(255, 255, 255, .75);
+            padding: 1rem;
+            border-radius: .5rem;
+            cursor: pointer;
+            color: #404040;
+            font-weight: 700;
+        }
+    }
+}
+
+
+.alert {
+    position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   padding: 30px 45px;
+   border-radius: 5px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   font-size: 16px;
+   text-align: center;
+   z-index: 1000;
+   opacity: 0;
+   animation: fadeInOut 5s ease forwards;
+   font-size: 2rem;
+
+   &.error {
+       background-color: #f44336;
+       color: #fff;
+   } 
+   
+   &.success {
+       background-color: #4caf50;
+       color: #fff;
+   }
+
+}
+
+.btn-cart {
+    position: relative;
+}
+
+.btn-cart:hover .cart {
+    display: block;
+    opacity: 1;
 }
 
 .header .search-form{
@@ -173,14 +291,97 @@ section{
 }
 
 .header .cart-items-container{
-    position: absolute;
-    top: 100%; right: -100%;
-    height: calc(100vh - 9.5rem);
-    width: 35rem;
-    background: rgb(233, 228, 221);
-    padding: 0 1.5rem;
-    overflow: auto;
+        position: absolute;
+        top: 100%; right: -100%;
+        height: calc(100vh - 9.5rem);
+        width: 45rem;
+        background-color: rgba(176, 214, 212, 0.6);
+        padding: 0 1.5rem;
+        overflow: auto;
 }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        thead {
+            th {
+                padding: 1rem;
+                color: black;
+            }
+            
+            border-bottom: 1px solid white;
+        }
+
+        tbody {
+            tr {
+                padding: 2rem 0;
+            }
+            td {
+                color: black;
+                padding: 1rem;
+                img {
+                    width: 10rem;
+                }
+
+                p {
+                    font-size: 1.6rem;
+                    font-weight: 400;
+                }
+
+                input {
+                    width: 6rem;
+                    background-color: transparent;
+                    border: 1px solid #f7f8f9;
+                    padding: .7rem;
+                    color: black;
+                    border-radius: .5rem;
+                    &:focus,
+                    &:active {
+                        outline: none;
+                    }
+                }
+
+                button {
+                    border: none;
+                    width: 3rem;
+                    height: 3rem;
+                    background-color: #dc2626;
+                    color: #f7f8f9;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        tfoot {
+            .total {
+                text-align: right;
+                padding-bottom: 2rem;
+
+                .heading-total {
+                    color: black;
+                    span {
+                        margin-left: .5rem;
+                    }
+                }
+            }
+
+            td {
+                button {
+                    width: 100%;
+                    background-color: rgb(255, 255, 255, .75);
+                    padding: 1rem;
+                    border-radius: .5rem;
+                    cursor: pointer;
+                    color: #404040;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+    
+
 
 .header .cart-items-container::-webkit-scrollbar{
     width: 0;
@@ -237,7 +438,7 @@ section{
 
 .header .cart-items-container .cart-item .content .price{
     font-size: 1.5rem;
-    color: var(--main-color);
+    color: black;
 }
 
 .header .cart-items-container .btn{
@@ -253,7 +454,10 @@ section{
     background: url(side-view-female-musician-playing-cello-sunset-rocks.jpg)no-repeat;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
+
+
 
 
 .home .content{
@@ -379,7 +583,7 @@ section{
 .menu .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 1.5 rem;
+    gap: 1.5rem;
 }
 
 .menu .box-container .box{
@@ -423,10 +627,59 @@ section{
     color: var(--black);
 }
 
+.alert {
+    position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   padding: 30px 45px;
+   border-radius: 5px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   font-size: 16px;
+   text-align: center;
+   z-index: 1000;
+   opacity: 0;
+   animation: fadeInOut 5s ease forwards;
+   font-size: 2rem;
+
+   &.error {
+       background-color: #f44336;
+       color: #fff;
+   } 
+   
+   &.success {
+       background-color: #4caf50;
+       color: #fff;
+   }
+
+}
+
+@keyframes fadeInOut {
+   0% {
+       opacity: 0;
+       transform: translate(-50%, -50%) scale(0.8);
+   }
+   10% {
+       opacity: 1;
+       transform: translate(-50%, -50%) scale(1);
+   }
+   90% {
+       opacity: 1;
+       transform: translate(-50%, -50%) scale(1);
+   }
+   100% {
+       opacity: 0;
+       transform: translate(-50%, -50%) scale(0.8);
+   }
+}
+#listProducts {
+    position: relative;
+}
+
 .products .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 1.5 rem;
+    gap: 1.5rem;
 }
 
 .products .box-container .box{
@@ -584,9 +837,9 @@ section{
 
 .blogs .box-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
-    gap: 1rem; /* Espacio entre las cajas */
-    padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
 }
 
 
@@ -783,7 +1036,7 @@ color: var(--main-color);
     }
 
     .home{
-        background-position: left;
+        background-position: center top;
         justify-content: center;
         text-align: center;
     }
@@ -802,5 +1055,27 @@ color: var(--main-color);
     html{
         font-size: 50%;
     }
-    
+    @media (max-width: 450px) {
+        .blogs .box-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      
+        .blogs .box-container .box {
+          width: 90%;
+          margin-bottom: 2rem;
+        }
+      
+        .blogs .box-container .box .image img {
+          width: 100%;
+          height: auto;
+        }
+      
+        .blogs .box-container .box .content {
+          padding: 1rem;
+          text-align: center;
+        }
+      }
+
 }
